@@ -10,6 +10,7 @@ RUN ["npm","run","build"]
 
 #Prod Phase
 FROM nginx
+EXPOSE 80
 COPY --from=builder /app/build  /usr/share/nginx/html
 # Need not start nginx since its default command is to start nginx server
 
