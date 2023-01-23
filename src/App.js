@@ -15,7 +15,8 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React with Docker
+          Learn React with Docker.
+          I was changed in feature branch.
         </a>
       </header>
     </div>
