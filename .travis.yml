@@ -1,0 +1,12 @@
+language: generic 
+
+sudo: required # We need sudi permission for using docker. We are telling travis
+
+services: 
+  - docker 
+
+before_install:
+  - docker build -t som/docker-react -f Dockerfile.dev . 
+
+script: # This section contains all cmds necessary to run Travis builds
+  - docker run -e CI=true som/docker-react npm run test
