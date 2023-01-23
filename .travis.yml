@@ -10,3 +10,15 @@ before_install:
 
 script: # This section contains all cmds necessary to run Travis builds
   - docker run -e CI=true som/docker-react npm run test
+
+deploy: # Instructions for travis to deploy to AWS
+  provider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "docker-react"
+  env: "Dockerreact-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-801753271921"
+  bucket_path: "docker-react"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: "$AWS_SECRET_KEY"
